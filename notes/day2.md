@@ -257,5 +257,17 @@ $ docker run --rm \
 
 - Configure a Sonarqube (using a couple of containers)
 - We will use a container to send the code (our project) to sonarqube
+
+$ docker run --rm \
+            -v /home/ubuntu/environment/training/project/myproject:/project \
+            -w /project \
+            maven:3.6.3-openjdk-17 \
+            mvn sonar:sonar <args>
+
 - We will create our custom docker image, containing a running version of my app... so that we can do More tests
   (using selenium)... for that we need a running instance of our app (I MEAN: an INTEGRATION/TEST environment)
+
+
+
+# Sonarqube uses elastic search in order to index proyect files... for searching
+# And elasticsearch requires a couple of kernel configurations... that cannot be set from the containers.
