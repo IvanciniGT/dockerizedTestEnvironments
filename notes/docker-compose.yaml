@@ -1,0 +1,41 @@
+version: "3"  # This right here is the version of the docker compose SCHEME in use within this file.
+
+services:
+
+    mynginx: # <<<   This is not the same as the container name
+             # This is a fqdn (network resolvable name) within the docker virtual network...
+             # That means that another container in the same network (docker network) can make use of this name to access this container... 
+             # instead of the container IP... AND THIS IS EXTREMELY CONVINIENT !!!!
+        container_name: mynginx # This is the name that we can make use of when working with the docker command to refer to this container
+        image:          nginx:latest
+        ports:
+                      - 8888:80                             # First port is the HOST port 
+        volumes:
+                      - /home/ubuntu/environment/data:/Ivan # Remember first part is the host path. 
+                                                            # Second part is the container path
+        environment:
+                  var1: custom-value1
+                  var2: custom-value2
+                  #- var1=custom-value1
+                  #- var2=custom-value2   BOTH syntax are supported... But you cannot mix them within an environment block
+
+        # Order is not important at all... You can DECLARE first the container image... or the name.. or even the ports... It does not matter
+        
+# docker compose -f PATH-OF-MY-DOCKER-COMPOSE.YAML-FILE      VERB
+# If I dont provide a path...         ./docker-compose.yaml or ./docker-compose.yml would be used
+
+# VERBS:
+# up            Creates/recreates the declared containers and starts them
+#   First time we create containers with docker compose... we don't specify -d... to make sure we can see the logs and that everything is runnig as expected.
+#   Once everything is running as expected, we add that argument: -d... to get rid out of those logs...
+#   As a matter opf fact, I can always check the log of a container... by typing:
+#       docker logs CONTAINER_NAME
+# down          stops running containers declared on this file and removes them
+# start         Starts already created containers within this file (First I had to execute the up command for this to work)
+# stop          Just stops the containers... but it does not remove them
+# restart
+# ...
+
+# TIME AGO... (just in case you see that in any google / YOUTUBE tutorial)
+# the command to run these files was: $ docker-compose... with a dash between docker and compose.
+# This command is deprecated... nowadays we just type the same without the dash: docker compose 
