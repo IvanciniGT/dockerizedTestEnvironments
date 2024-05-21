@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.training.MyLibraryTest" time="0.092" tests="5" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.training.MyLibraryTest" time="0.07" tests="5" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -20,7 +20,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="localRepository" value="/root/.m2/repository"/>
     <property name="sun.boot.library.path" value="/usr/java/openjdk-17/lib"/>
-    <property name="sun.java.command" value="/project/target/surefire/surefirebooter-20240521193459071_3.jar /project/target/surefire 2024-05-21T19-34-58_603-jvmRun1 surefire-20240521193459071_1tmp surefire_0-20240521193459071_2tmp"/>
+    <property name="sun.java.command" value="/project/target/surefire/surefirebooter-20240521194223373_3.jar /project/target/surefire 2024-05-21T19-42-22_975-jvmRun1 surefire-20240521194223373_1tmp surefire_0-20240521194223373_2tmp"/>
     <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
     <property name="java.io.tmpdir" value="/tmp"/>
     <property name="jdk.debug" value="release"/>
@@ -47,11 +47,11 @@
     <property name="java.vm.version" value="17-ea+16-1315"/>
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
-    <property name="surefire.real.class.path" value="/project/target/surefire/surefirebooter-20240521193459071_3.jar"/>
+    <property name="surefire.real.class.path" value="/project/target/surefire/surefirebooter-20240521194223373_3.jar"/>
   </properties>
-  <testcase name="sum2PositiveNumbersTest" classname="com.training.MyLibraryTest" time="0.037"/>
-  <testcase name="sumZeroTest" classname="com.training.MyLibraryTest" time="0.002"/>
-  <testcase name="doubleZeroTest" classname="com.training.MyLibraryTest" time="0.002"/>
+  <testcase name="sum2PositiveNumbersTest" classname="com.training.MyLibraryTest" time="0.029"/>
+  <testcase name="sumZeroTest" classname="com.training.MyLibraryTest" time="0.003"/>
+  <testcase name="doubleZeroTest" classname="com.training.MyLibraryTest" time="0.001"/>
   <testcase name="doublePositiveNumberTest" classname="com.training.MyLibraryTest" time="0.001"/>
-  <testcase name="sum2NegativeNumbersTest" classname="com.training.MyLibraryTest" time="0.003"/>
+  <testcase name="sum2NegativeNumbersTest" classname="com.training.MyLibraryTest" time="0.002"/>
 </testsuite>
