@@ -30,6 +30,7 @@
   </dependencies>
 
   <build>
+    <finalName>webapp</finalName> <!-- this sets the name of the packaged file: webapp.war  --->
     <plugins>
       
       <plugin>

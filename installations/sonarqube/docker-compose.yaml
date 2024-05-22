@@ -54,3 +54,9 @@ services:
   #postgresql_data:
   
  # docker compose up -d
+ # After start all these containers... if we were working on our computer (PC) 
+ # We could just open a browser and access: http://localhost:8080
+ 
+ # As we are usoing an amazon machine, AMAZON brings us a reverse proxy already configured to access my machine ports:
+ # 8080 (by default), 8081 and 8082.
+ # That's out of the box.

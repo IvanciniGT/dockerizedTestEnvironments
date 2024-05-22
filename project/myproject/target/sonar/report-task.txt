@@ -1,0 +1,6 @@
+projectKey=myProject
+serverUrl=http://172.31.0.67:8080
+serverVersion=10.5.1.90531
+dashboardUrl=http://172.31.0.67:8080/dashboard?id=myProject
+ceTaskId=054a25a6-786b-41ac-b25b-524fa13a9b71
+ceTaskUrl=http://172.31.0.67:8080/api/ce/task?id=054a25a6-786b-41ac-b25b-524fa13a9b71

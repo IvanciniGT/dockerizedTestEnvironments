@@ -262,7 +262,10 @@ $ docker run --rm \
             -v /home/ubuntu/environment/training/project/myproject:/project \
             -w /project \
             maven:3.6.3-openjdk-17 \
-            mvn sonar:sonar <args>
+            mvn sonar:sonar \
+            -Dsonar.projectKey=myProject \
+            -Dsonar.token=squ_47e0ec1345bf1b450d93113d115267a63b6e3d7e \
+            -Dsonar.host.url=http://172.31.0.67:8080
 
 - We will create our custom docker image, containing a running version of my app... so that we can do More tests
   (using selenium)... for that we need a running instance of our app (I MEAN: an INTEGRATION/TEST environment)
@@ -270,4 +273,61 @@ $ docker run --rm \
 
 
 # Sonarqube uses elastic search in order to index proyect files... for searching
+
+done
 # And elasticsearch requires a couple of kernel configurations... that cannot be set from the containers.
+done
+
+---
+
+At this point we did use containers for:
+- Creating a JAVA PROJECT with maven
+- Compiling the code
+- Execute unit tests            <<< We can do Unit and Integration tests
+- Package the project
+- Install Postgre and Sonar
+- Execute a sonnar scanner analysis in our project  <<< We are doing code quality tests
+
+In our case, we have a web app... and we want to do some END2END tests: system tests.
+For doing that we need a bunch of thing:
+- We need to deploy our application (webapp) inside a java web application server (a tool such as Tomcat, weblogic, websphere)
+  The truth is that nowadays, most of the java projects are being created with Spring/SpringBoot (which is a Java Framework for developing apps)
+  And Spring automatically inclkudes a Tomcat Web app server by default... OUT OF THE BOX... in the software package.
+  A Spring webapp is packaged as a jar file... and within that jar file an Apache tomcat is included.
+We just need to execute that jar file. thats all... IF WE ARE WORKING WITH SPRING... but that is not our case...
+We need to do some work here.
+
+We will install a Tomcat Web app server... with out webapp deployed... thru a custom container IMAGE.
+Actually we are going to create out custom container IMAGE...
+and use that image to create a running container with our app already deployed on a tomcat web app server.
+
+BUT, this is only the first part.
+
+Once we have a deployed app, we will make use of SELENIUM to automate the end2end tests against the UI.
+Selenium consist of several things:
+- It requires a browser... or a pool of browsers.
+- It requires a program call WEB DRIVER. Each web browser has it's own WEB DRIVER.
+  A web driver is a program that can manage automatically a browser:
+    - Open a new tab
+    - Navigate to this page...
+- Provides APIs for using those WEB DRIVERS (and ... as a consecuence, control a browser) for: JAVA, PY, C#...
+- We have top create a script in any of those languages, 
+  that making use of that API, can send instructions to a WEB-DRIVER to control a BROWSER
+
+But... actually, Selenium also provides another component... SELENIUM GRID... 
+A selenium GRID is a farm of BROWSERS and WEBDRIVERS to control those... that can be accesess via http
+
+---
+
+Creating a container image, implies:
+- Generate a new Container from a BASE IMAGE
+- Execute commandos or copy things inside that CONTAINER
+- And finally, pack the container FileSystem into a TAR FILE (image)
+
+all that is done automatically by the "$ docker build" command.
+That command requires a Dockerfile
+
+
+
+
+
