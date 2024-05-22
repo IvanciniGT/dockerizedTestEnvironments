@@ -331,3 +331,16 @@ That command requires a Dockerfile
 
 
 
+---
+We do have:
+
+- A container runnig tomcat woith our app deployed (test enviroment)
+- A container running Chrome and its webdriver
+- A container running Edge and its webdriver
+- A container running Firefox and its webdriver
+- A container running Selenium grid, to control those browsers
+
+Let's create a selenium script to test the app
+- And let's create a container to run that script.
+- We will do that with python.
+

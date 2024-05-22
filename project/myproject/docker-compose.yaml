@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+    mywebapp:
+        container_name: mywebapp
+        build:
+            context: . ## YOU(docker) BUILD THE IMAGE using the Dockerfile, in this folder
+        image: myprojecty:rc # This tag will we applied to the generated image
+        ports:
+            - 8081:8080 # Open port 8081 of muy host and redirect that to my container port 8080: TOMCAT
+            
+# When generating images from docker compose files, there is an iomportan option in docker compose command:
+
+# docker compose up --build -d      This force the image generation, even in case it already exists... 
+# Maybe the current version needs to be updated... Regenerated

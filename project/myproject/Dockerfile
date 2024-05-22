@@ -32,3 +32,6 @@ ENV TOMCAT_PASSWORD=password
 ##### When executing "docker build" with this Docker file, docker will create these 2 containers... 
 ###### and will generate a container image based on the latest one
 ###### This is an example of what we call a MULTISTAGE Docker file
+
+# EXECUTE WITH docker build . -t myproject:rc
+## Thaty is something we could have done... but we are not going to do it like this.
